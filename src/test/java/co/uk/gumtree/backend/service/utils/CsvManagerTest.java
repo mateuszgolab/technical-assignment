@@ -1,7 +1,6 @@
 package co.uk.gumtree.backend.service.utils;
 
 import co.uk.gumtree.backend.configuration.AddressBookConfig;
-import co.uk.gumtree.backend.model.AddressBook;
 import org.junit.Test;
 
 import java.util.List;
@@ -32,6 +31,21 @@ public class CsvManagerTest {
         assertThat(last.get(0), is("Wes Jackson"));
         assertThat(last.get(1), is("Male"));
         assertThat(last.get(2), is("14/08/74"));
+
+    }
+
+
+    @Test
+    public void testInvalidCsvPath() {
+
+        // given
+        String path = "invalid/path";
+
+        // when
+        List<List<String>> results = CsvManager.read(path);
+
+        // then
+        assertThat(results.isEmpty(), is(true));
 
     }
 
