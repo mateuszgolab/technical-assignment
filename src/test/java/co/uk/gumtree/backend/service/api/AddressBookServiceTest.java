@@ -1,4 +1,4 @@
-package co.uk.gumtree.backend.service;
+package co.uk.gumtree.backend.service.api;
 
 import static org.junit.Assert.*;
 

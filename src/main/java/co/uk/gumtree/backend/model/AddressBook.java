@@ -1,13 +1,16 @@
 package co.uk.gumtree.backend.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class AddressBook {
 
     private String firstName;
     private String lastName;
     private Gender gender;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public AddressBook(String firstName, String lastName, Gender gender, String dateOfBirth) {
+    public AddressBook(String firstName, String lastName, Gender gender, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -38,11 +41,11 @@ public class AddressBook {
         this.gender = gender;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 }

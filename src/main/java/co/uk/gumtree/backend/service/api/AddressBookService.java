@@ -1,7 +1,7 @@
-package co.uk.gumtree.backend.service;
+package co.uk.gumtree.backend.service.api;
 
 import co.uk.gumtree.backend.model.AddressBook;
-import co.uk.gumtree.backend.dao.DAO;
+import co.uk.gumtree.backend.service.dao.DAO;
 
 public class AddressBookService {
 
