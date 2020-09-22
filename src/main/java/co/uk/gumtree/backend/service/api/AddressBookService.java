@@ -28,7 +28,9 @@ public class AddressBookService {
      * 1. How many males are in the address book?
      */
     public long task1() {
-        return addressBookDAO.getByGender(Gender.MALE).size();
+        return addressBookDAO.getAll().stream().
+                filter(a -> a.getGender() == Gender.MALE).
+                count();
     }
 
     /**
@@ -45,12 +47,12 @@ public class AddressBookService {
      */
     public long task3() {
 
-        Optional<AddressBook> paul = addressBookDAO.getByFirstName("Paul").
-                stream().
+        Optional<AddressBook> paul = addressBookDAO.getAll().stream().
+                filter(a -> a.getFirstName().equals("Paul")).
                 findFirst();
 
-        Optional<AddressBook> bill = addressBookDAO.getByFirstName("Bill").
-                stream().
+        Optional<AddressBook> bill = addressBookDAO.getAll().stream().
+                filter(a -> a.getFirstName().equals("Bill")).
                 findFirst();
 
         if (bill.isPresent() && paul.isPresent()) {
