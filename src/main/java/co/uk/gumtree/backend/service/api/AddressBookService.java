@@ -11,13 +11,6 @@ import java.util.Optional;
 
 public class AddressBookService {
 
-    private static class DateOfBirthComparator implements Comparator<AddressBook> {
-        @Override
-        public int compare(AddressBook o1, AddressBook o2) {
-            return o1.getDateOfBirth().compareTo(o2.getDateOfBirth());
-        }
-    }
-
     private DAO<AddressBook> addressBookDAO;
 
     public AddressBookService(DAO<AddressBook> addressBookDAO) {
@@ -39,7 +32,7 @@ public class AddressBookService {
     public Optional<AddressBook> task2() {
 
         return addressBookDAO.getAll().stream().
-                min(new DateOfBirthComparator());
+                min(Comparator.comparing(AddressBook::getDateOfBirth));
     }
 
     /**
